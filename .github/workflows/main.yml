@@ -38,9 +38,9 @@ jobs:
       - name: Prepare the application
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Test with phpunit
-        run: vendor/bin/phpunit -c phpunit.xml --log-junit test-results.xml --coverage-clover test-coverage.xml
+        run: vendor/bin/phpunit -c phpunit.xml --log-junit results/test-results.xml --coverage-clover results/test-coverage.xml
       - name: fix code coverage paths
-        # working-directory: ./coverage
+        working-directory: ./results
         run: |
           sed -i 's/\/home\/runner\/work\/lumen-test\/lumen-test\//\/github\/workspace\//g' test-results.xml
           sed -i 's/\/home\/runner\/work\/lumen-test\/lumen-test\//\/github\/workspace\//g' test-coverage.xml
