@@ -38,7 +38,7 @@ jobs:
       - name: Prepare the application
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Test with phpunit
-        run: vendor/bin/phpunit -c phpunit.xml --log-junit results/results.xml --coverage-clover results/coverage.clover
+        run: vendor/bin/phpunit -c phpunit.xml --log-junit results/results.xml --coverage-clover results/coverage.xml
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
