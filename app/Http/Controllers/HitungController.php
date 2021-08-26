@@ -20,7 +20,7 @@ class HitungController extends Controller
         return response()->json([
             "awal" => $req->awal,
             "akhir" => $req->akhir,
-            "hasil" => $hasil
+            "hasil" => $hasil 
         ]) ;
     }
 
